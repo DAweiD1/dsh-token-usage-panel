@@ -1,0 +1,28 @@
+{
+  "name": "@local/dsh-token-usage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sidebar token usage panel for DeepSeek Harness: totals, cache hit rate, and per-provider / per-model breakdowns.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DAweiD1/dsh-token-usage-panel.git"
+  },
+  "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "token-usage", "dashboard"],
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-sidebar"]
+    }
+  }
+}

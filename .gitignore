@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# 依赖与本地临时文件
+node_modules/
+*.log
+.tmp/
